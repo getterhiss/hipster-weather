@@ -1,9 +1,11 @@
 require('dotenv').config();
 
+
 const express =  require('express');
 const bodyParser = require('body-parser');
 const request = require('request-promise');
 const app = express();
+const addFunk = require('./funk');
 
 // Two ways to do this
 // 1. HTTP_PORT=3000 nodemon index.js (an environment variable)
@@ -40,7 +42,7 @@ app.get('/api/weather/:latlong', (req, res) => {
 
                 let { currently } = jsonResponseFromDarkSky;
 
-                currently.summary = `Wear your hat yo, it's fu@#%@ cold outside. It's a nippy ${currently.temperature} degrees!`
+                addFunk(currently);
                 
                 // Send back to our users
                 // Basically right now we're a glorified middleman :(
