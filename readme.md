@@ -64,3 +64,34 @@
     - Edit .gitignore, add `.env`
     - Add all environment variables to .env file `HTTP_PORT` and `API_KEY`
 
+## Next Steps
+- [ ] Need to either use latitude and longitude to send to Dark Sky, or
+    - Pros: Faster to respond to users. Phones send lat/lon anyway
+    - Cons: Less robust
+
+## Add hipster weather funk
+- [ ] Reduce response from Dark Sky
+- [ ] Add our own funk based on type of weather
+- [ ] Make sure we attribute properly our sources
+    - Dark Sky - “Powered by Dark Sky” that links to https://darksky.net/poweredby/
+    - LocationIQ - "Search by LocationIQ.com"! 
+
+## Setup Landing Page
+- [ ] Single HTML Page (hipsterweather.com)
+    - for what it is
+    - Quick documentation on how to make a request
+
+## Launch
+- [ ] Launch to Heroku
+
+## After Launch / Enhancements
+- [ ] Make iOS/Android Apps
+- [ ] Make WebApp for it
+- [ ] Maybe cache requests from DarkSky for 15 minutes
+    - For speed, reduce requests to them
+- [ ] Add our own api keys to limit requests
+- [ ] Reverse geo lookup latitude and longitude for a city name
+    - Pros: More flexible
+    - Cons: Another lookup to slow down request
+    - Google provides an API
+    - LocationIQ does as well https://locationiq.com/#demo
