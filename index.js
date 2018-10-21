@@ -20,11 +20,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // User can request weather for a city
-app.get('/api/weather/:city', (req, res) => {
+app.get('/api/weather/:latlong', (req, res) => {
     
     // https://github.com/request/request-promise#get-something-from-a-json-rest-api
 
-    let uri = `https://api.darksky.net/forecast/${API_KEY}/37.8267,-122.4233`;
+    const { latlong } = req.params; // 37.8267,-122.4233
+
+    let uri = `https://api.darksky.net/forecast/${API_KEY}/${latlong}`;
+    //*/
     request.get({uri, json: true})
         .then(jsonResponseFromDarkSky => {
             
@@ -36,6 +39,7 @@ app.get('/api/weather/:city', (req, res) => {
             console.log('Error from DarkSky:', err);
             res.json({error: 'There was an issue with your request. Our systems admins are looking into it!'})
         })
+    //*/ res.json({uri});
 
 });
 

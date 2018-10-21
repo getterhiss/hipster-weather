@@ -65,7 +65,7 @@
     - Add all environment variables to .env file `HTTP_PORT` and `API_KEY`
 
 ## Next Steps
-- [ ] Need to either use latitude and longitude to send to Dark Sky, or
+- [x] Need to either use latitude and longitude to send to Dark Sky, or
     - Pros: Faster to respond to users. Phones send lat/lon anyway
     - Cons: Less robust
 
