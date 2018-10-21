@@ -73,9 +73,10 @@
 
 
 ## Add hipster weather funk
-- [ ] Reduce response from Dark Sky
+- [x] Reduce response from Dark Sky
 - [ ] Add our own funk based on type of weather
 - [ ] Send back better parsed error messages to our users, with some funk
+- [ ] Add conversion to metric
 - [ ] Make sure we attribute properly our sources
     - Dark Sky - “Powered by Dark Sky” that links to https://darksky.net/poweredby/
     - LocationIQ - "Search by LocationIQ.com"! 

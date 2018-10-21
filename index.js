@@ -37,10 +37,14 @@ app.get('/api/weather/:latlong', (req, res) => {
         //*/ https://github.com/request/request-promise#get-something-from-a-json-rest-api
         request.get({uri, json: true})
             .then(jsonResponseFromDarkSky => {
+
+                let { currently } = jsonResponseFromDarkSky;
+
+                currently.summary = `Wear your hat yo, it's fu@#%@ cold outside. It's a nippy ${currently.temperature} degrees!`
                 
                 // Send back to our users
                 // Basically right now we're a glorified middleman :(
-                res.json(jsonResponseFromDarkSky);
+                res.json(currently);
             })
             .catch(err => {
                 console.log('Error from DarkSky:', err);
@@ -50,6 +54,7 @@ app.get('/api/weather/:latlong', (req, res) => {
     }
 
 });
+
 
 // Setup route at root
 app.get('/', (req, res) => {
