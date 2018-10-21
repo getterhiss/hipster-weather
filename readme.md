@@ -53,10 +53,14 @@
     - execute on command line: `npm run dev`
 
 ## Dark Sky API
-- [ ] Setup account at darksky for weather api
+- [x] Setup account at darksky for weather api
+- [x] Use request-promise library to make a request
+    - We could use a js client library provided by [Dark Sky](https://darksky.net/dev/docs/libraries).
+- [x] DO NOT COMMIT THE API KEY, PASS IN AS AN ENVIRONMENT VARIABLE
+    - `API_KEY=xxxxxxxxx`
+- [x] Setup a .env library ([dotenv](https://github.com/motdotla/dotenv#dotenv)) to save our private keys. Add to .gitignore.
+    - `npm i dotenv --save`
+    - Edit index.js, add to top: `require('dotenv').config();`
+    - Edit .gitignore, add `.env`
+    - Add all environment variables to .env file `HTTP_PORT` and `API_KEY`
 
-
-### Code block example
-```js
-var getter = "hello world!"
-```
