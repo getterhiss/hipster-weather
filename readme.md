@@ -68,10 +68,14 @@
 - [x] Need to either use latitude and longitude to send to Dark Sky, or
     - Pros: Faster to respond to users. Phones send lat/lon anyway
     - Cons: Less robust
+- [x] Better error handling and checking
+    - Catch lat/long error before sending (validate they are floating point numbers)
+
 
 ## Add hipster weather funk
 - [ ] Reduce response from Dark Sky
 - [ ] Add our own funk based on type of weather
+- [ ] Send back better parsed error messages to our users, with some funk
 - [ ] Make sure we attribute properly our sources
     - Dark Sky - “Powered by Dark Sky” that links to https://darksky.net/poweredby/
     - LocationIQ - "Search by LocationIQ.com"! 
@@ -95,3 +99,6 @@
     - Cons: Another lookup to slow down request
     - Google provides an API
     - LocationIQ does as well https://locationiq.com/#demo
+    - Run our own geocoding database for faster lookups!!!
+- [ ] Fix floating point number stripping zeros (i.e. 5.0 is NaN)
+    - re: https://stackoverflow.com/a/4868718
