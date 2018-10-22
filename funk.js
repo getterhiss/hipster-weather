@@ -2,7 +2,7 @@
 
 function addFunk(currently) {
 
-    if (currently.precipType === "rain") {
+    if (currently.precipProbability > 0.7 && currently.precipType === "rain") {
         currently.summary = `Better bring the rain coat, coz it is rainy and ${currently.temperature} degrees out there.`;
     } else if (currently.temperature < parseInt(23)) {
         currently.summary = `${currently.temperature} degrees! Is this even possible !?! Better stay in today..`
