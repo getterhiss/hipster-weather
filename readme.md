@@ -74,7 +74,8 @@
 
 ## Add hipster weather funk
 - [x] Reduce response from Dark Sky
-- [ ] Add our own funk based on type of weather
+- [x] Add our own funk based on type of weather
+    - Make a different folder for all the funk.
 - [ ] Send back better parsed error messages to our users, with some funk
 - [ ] Add conversion to metric
 - [ ] Make sure we attribute properly our sources
