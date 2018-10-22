@@ -1,6 +1,5 @@
 require('dotenv').config();
 
-
 const express =  require('express');
 const bodyParser = require('body-parser');
 const request = require('request-promise');
@@ -36,16 +35,21 @@ app.get('/api/weather/:latlong', (req, res) => {
 
         let uri = `https://api.darksky.net/forecast/${API_KEY}/${latlong}`;
         
+        let start1 = Date.now();
+
         //*/ https://github.com/request/request-promise#get-something-from-a-json-rest-api
         request.get({uri, json: true})
             .then(jsonResponseFromDarkSky => {
 
-                let { currently } = jsonResponseFromDarkSky;
+                let end1 = Date.now();
+                console.log(`time spent getting weather ${(end1-start1)}...`);
 
+                let { currently, timezone } = jsonResponseFromDarkSky;
+                
+                currently.timezone = timezone;
                 addFunk(currently);
                 
                 // Send back to our users
-                // Basically right now we're a glorified middleman :(
                 res.json(currently);
             })
             .catch(err => {
@@ -57,11 +61,11 @@ app.get('/api/weather/:latlong', (req, res) => {
 
 });
 
-
 // Setup route at root
 app.get('/', (req, res) => {
     res.send('Welcome to HipsterWeather');
 });
+
 
 // Listen on a given port + function
 // PORT (environment variable) 
