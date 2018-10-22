@@ -9,7 +9,7 @@
     "dev": "nodemon index.js"
   },
   "engines": {
-    "node": "8.11.3" 
+    "node": "8.x.x" 
   },
   "author": "",
   "license": "ISC",

@@ -87,8 +87,20 @@
     - for what it is
     - Quick documentation on how to make a request
 
-## Launch
-- [ ] Launch to Heroku
+## Launch to Heroku
+- [x] Launch to Heroku
+- [x] Make an account with Heroku
+- [x] [Download heroku cli](https://devcenter.heroku.com/articles/heroku-cli)
+- [x] Login to Heroku cli `heroku login`
+- [x] Added app `hipsterweather` on https://dashboard.heroku.com/apps
+- [x] Added git remote: `heroku git:remote -a hipsterweather`
+- [x] Added npm start script required by heroku: `"start": "node index.js"`
+- [x] Added npm engine variable to package.json required by heroku: `"engines": {"node": "8.11.3"}`
+- [x] Converted HTTP_PORT to PORT since Heroku auto assigns a PORT
+- [x] Added API_KEY to Heroku with `heroku config:set API_KEY=xxxxxxxx`
+- [x] Commited all changes to git, then pushed to Heroku `git push heroku master`
+- [x] Check app is working from: https://hipsterweather.herokuapp.com/api/weather/37.8267,5.01
+- [x] You can watch logs via `heroku logs --tail` on the command line
 
 ## After Launch / Enhancements
 - [ ] Make iOS/Android Apps
