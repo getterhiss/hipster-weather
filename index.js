@@ -8,9 +8,9 @@ const app = express();
 const addFunk = require('./funk');
 
 // Two ways to do this
-// 1. HTTP_PORT=3000 nodemon index.js (an environment variable)
+// 1. PORT=3000 nodemon index.js (an environment variable)
 // 2. nodemon index.js port=3000 (an arguement)
-const HTTP_PORT = process.env.HTTP_PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // Get API_KEY from enviroment (NEVER COMMIT TO GIT!)
 const API_KEY = process.env.API_KEY;
@@ -64,9 +64,9 @@ app.get('/', (req, res) => {
 });
 
 // Listen on a given port + function
-// HTTP_PORT (environment variable) 
-app.listen(HTTP_PORT, () => {
-    console.log(`Listening on port ${HTTP_PORT}...`);
+// PORT (environment variable) 
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}...`);
 });
 
 // Function to check is float

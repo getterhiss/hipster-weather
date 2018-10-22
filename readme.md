@@ -24,12 +24,12 @@
 - [x] Create express app
     - `const express =  require ('express');` 
     - `const app = express();`
-- [x] Add HTTP_PORT passed in or default
+- [x] Add PORT passed in or default
     - default http port is 80.
     - default https port is 443.
     - ports below 1024?? are priviledged (you'd have to use `sudo` to start your app with a password)
     - So, we'll use port `3000` as our default
-    - `const HTTP_PORT = process.env.HTTP_PORT || 3000;` 
+    - `const PORT = process.env.PORT || 3000;` 
 - [x] Add body parser middleware
     - Added json and for submitted forms
 - [x] Add endpoint /api/weather/:city
@@ -44,8 +44,8 @@
     ```
 - [x] Listen for requests
     ```js
-    app.listen(HTTP_PORT, () => {
-        console.log(`Listening on port ${HTTP_PORT}...`);
+    app.listen(PORT, () => {
+        console.log(`Listening on port ${PORT}...`);
     });
     ```
 - [x] Setup nodemon to monitor index.js in package.json under scripts
@@ -62,7 +62,7 @@
     - `npm i dotenv --save`
     - Edit index.js, add to top: `require('dotenv').config();`
     - Edit .gitignore, add `.env`
-    - Add all environment variables to .env file `HTTP_PORT` and `API_KEY`
+    - Add all environment variables to .env file `PORT` and `API_KEY`
 
 ## Next Steps
 - [x] Need to either use latitude and longitude to send to Dark Sky, or
